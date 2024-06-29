@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Статьи
+{% endblock %}
+
+{% block content %}
+    {% if articles|length > 0 %}
+        <h1>Все статьи</h1>
+
+        {% for art in articles %}
+        <div class="alert alert-info">
+            <h2>{{ art[1] }}</h2>
+            <p>{{ art[2] }}</p>
+            <p align="right"><b>Дата публикации:</b> {{ art[4][0:16] }}</p>
+            <p><a href="/posts/{{ art[0] }}" class="btn btn-success">Детальнее</a></p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <h1>На сайте нет статьей</h1>
+    {% endif %}
+
+{% endblock %}

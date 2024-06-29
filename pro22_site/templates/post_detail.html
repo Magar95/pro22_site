@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ article[1] }}
+{% endblock %}
+
+{% block content %}
+    <h1 align="center">{{ article[1] }}</h1>
+    <div class="alert alert-info">
+        <p>{{ article[3] }}</p>
+        <p align="right"><b>Дата публикации:</b> {{ article[4][0:16] }}</p>
+        <p><a href="/posts" class="btn btn-warning">Назад</a></p>
+    </div>
+{% endblock %}
